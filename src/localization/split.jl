@@ -224,8 +224,8 @@ Split the `Model` into several `Model`s.
 function split_model(
     model::Model, eig_groups::AbstractVector{R}
 ) where {R<:AbstractVector{Int}}
-    E = model.E
-    U = model.U
+    E = model.eigenvalues
+    U = model.gauges[1]
     EVs = split_eig(E, U, eig_groups)
 
     UVs = []
